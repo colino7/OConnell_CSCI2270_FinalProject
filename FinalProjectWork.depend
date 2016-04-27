@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1461736820 source:/home/user/Dropbox/my_work/FinalProjectWork/main.cpp
+	<iostream>
+	"Tree.h"
+	<cstdlib>
+
+1461735551 source:/home/user/Dropbox/my_work/FinalProjectWork/src/Tree.cpp
+	"Tree.h"
+
+1461735551 /home/user/Dropbox/my_work/FinalProjectWork/include/Tree.h
+	<iostream>
+
