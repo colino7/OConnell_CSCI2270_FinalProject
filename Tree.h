@@ -40,6 +40,7 @@ class Tree
         int countSpecific(string name);
         float averageAge();
         void edit(string title1,int year1,string title2,int year2);
+        void displayItemsOfCertianType();
     protected:
     private:
         void DeleteAll(Node * node);
@@ -50,6 +51,9 @@ class Tree
         Node* search(string title,int year);
         Node* treeMinimum(Node *node);
         Node *root;
+        bool found = false;
+        void displayItemsOfCertianType(Node *node, string type);
 };
 
 #endif // TREE_H
+
