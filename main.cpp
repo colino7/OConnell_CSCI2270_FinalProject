@@ -103,8 +103,12 @@ int main(){//(main setup used from Professor Hoenigman's solution to assignment 
             case 10:
                 t.DeleteAllPublic();
                 break;
-            //Quit
+            //Display all items of the same type
             case 11:
+                t.displayItemsOfCertianType();
+                break;
+            //Quit
+            case 12:
                 cout << "Goodbye!" << endl;
                 quit = true;
                 break;
@@ -132,6 +136,7 @@ void displayMenu(){
     cout<<"8. Calculate average age of inventory"<<endl;
     cout<<"9. Edit an item"<<endl;
     cout<<"10. Delete the entire inventory"<<endl;
-    cout<<"11. Quit"<<endl;
+    cout<<"11. Print all items of same type"<<endl;
+    cout<<"12 Quit"<<endl;
     return;
 }
