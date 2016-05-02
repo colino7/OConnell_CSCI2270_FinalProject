@@ -18,7 +18,7 @@ Group Members:
 None
 
 Contributors: 
-None
+Catherine Diaz added the displayItemsOfCertainType method.
 
 Open Issues/Bugs: 
 No known bugs. If no bugs are found (which I bet bugs will be found) I would be open to other better methods to perform on the tree.
