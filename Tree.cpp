@@ -350,8 +350,11 @@ void Tree::rent(string title,int year){
             cout<<"Year:"<<node->year<<endl;
             cout<<"Quantity:"<<node->quantity<<endl;
             if(node->quantity==0){
-                cout<<"Deleting "<<node->title<<" "<<node->year<<endl;
-                deleteNode(node->title,node->year);
+                //cout<<"Deleting "<<node->title<<" "<<node->year<<endl;
+                //deleteNode(node->title,node->year);
+                cout<<"Item is now out of stock."<<endl;
+                //Item should not delete if it is rented, should
+                //just show that the quantity is now zero.
             }
         }
         else //otherwise the node->quantity is 0 so it is out of stock
@@ -360,41 +363,3 @@ void Tree::rent(string title,int year){
     else
         cout<<"Item not found."<<endl;
 }
-
-
-void Tree::displayItemsOfCertianType(Node *node, string type)
-{
-    if(node != NULL)
-    {
-        if(node->title == type)
-        {
-            cout << node->title << " " << node->year << endl;
-            found = true;
-        }
-        displayItemsOfCertianType(node->leftChild, type);
-        displayItemsOfCertianType(node->rightChild, type);
-    }
-
-}
-
-void Tree::displayItemsOfCertianType()
-{
-
-    string type;
-    cout << "Enter item type: " << endl;
-    getline(cin,type);
-    cout << endl;
-    cout << "Displaying all items with the type "  << type << "..." << endl;
-    displayItemsOfCertianType(root,type);
-    if(found == false)
-    {
-        cout << "This item is not in the tree" << endl;
-
-    }
-    else
-    {
-        found = false;
-    }
-
-}
-
