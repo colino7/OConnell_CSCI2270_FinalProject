@@ -333,7 +333,6 @@ void Tree::findNode(string title,int year){
     else
         cout<<"Item not found."<<endl;
 }
-
 void Tree::rent(string title,int year){
     if(root==NULL){
         cout<<"Inventory empty"<<endl;
@@ -354,7 +353,9 @@ void Tree::rent(string title,int year){
                 //deleteNode(node->title,node->year);
                 cout<<"Item is now out of stock."<<endl;
                 //Item should not delete if it is rented, should
-                //just show that the quantity is now zero.
+                //just show that the quantity is now zero. Now
+                //the directly below else statement works as
+                //intended
             }
         }
         else //otherwise the node->quantity is 0 so it is out of stock
@@ -362,4 +363,41 @@ void Tree::rent(string title,int year){
     }
     else
         cout<<"Item not found."<<endl;
+}
+
+
+void Tree::displayItemsOfCertianType(Node *node, string type)
+{
+    if(node != NULL)
+    {
+        if(node->title == type)
+        {
+            cout << node->title << " " << node->year << endl;
+            found = true;
+        }
+        displayItemsOfCertianType(node->leftChild, type);
+        displayItemsOfCertianType(node->rightChild, type);
+    }
+
+}
+
+void Tree::displayItemsOfCertianType()
+{
+
+    string type;
+    cout << "Enter item type: " << endl;
+    getline(cin,type);
+    cout << endl;
+    cout << "Displaying all items with the type "  << type << "..." << endl;
+    displayItemsOfCertianType(root,type);
+    if(found == false)
+    {
+        cout << "This item is not in the tree" << endl;
+
+    }
+    else
+    {
+        found = false;
+    }
+
 }
